@@ -2,31 +2,104 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.container {
+  position: relative;
+  display: flex;
 }
+
+/*
+*
+* Header.js
+*
+*/
+
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #1c262f;
+/*  height: 150px;*/
+  padding: 3px;
   color: white;
+  display: flex;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.App-title {
+  font-size: 1.5em;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hamburger-button{
+  background-color: #1c262f;
+  color: white;
+  width: 40px;
+  padding: 4px;
+  border: 0 solid;
+  border-radius: 3px;
+  font-size: 1.5em;
+  /*visibility: hidden;*/
 }
+
+/*
+*
+* ListView.js
+*
+*/
+
+.list-container {
+  /*background: #25313c;*/
+  border-right: 1px solid #999;
+  /*border-radius: 3px;*/
+  padding: 0;
+  text-align: right;
+  width: 33.33%;
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden; 
+}
+
+
+.list {
+  padding-left: 0px;
+  list-style: none;
+  color:white;
+}
+
+li {
+  padding: 10px;
+  cursor: pointer;
+  line-height: 2;
+  color: #1c262f;
+  border-bottom: 1px solid black;
+}
+
+li > p {
+  margin: 0;
+}
+
+/*
+*
+* Card.js
+*
+*/
+
+.card-container {
+  padding: 5px;
+}
+
+.card-container > h2 {
+  margin: 10px;
+}
+
+.card-box {
+  display: flex;
+  text-align: left;
+}
+
+.img-container {
+  padding: 20px;
+}
+
+.card-info > h2 {
+  margin: 10px 0;
+}
+
