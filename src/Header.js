@@ -3,9 +3,11 @@ import './App.css';
 
 class Header extends Component {
 	render(){
+
+		// onClick={() => this.toggleListView()}
 		return(
         <div className="App-header">
-          <button onClick={() => this.toggleSiderMenu()}> <i className="fas fa-bars"></i> </button>       
+          <button  className="hamburger-button"> <i className="fas fa-bars"></i> </button>       
           <h1 className="App-title">Yu-Gi-Oh Deck Browser</h1>
         </div>			
 		);
