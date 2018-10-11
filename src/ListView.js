@@ -9,14 +9,15 @@ class ListView extends Component {
 			<div className="list-container">
 				<ul className="list" >
 					{this.props.cards.map( (card, index) => (
-						<li key={index} > 
+						<li key={index} onClick={() => this.props.fetchCardData(card.cardName)}> 
 							<p> {card.cardName} </p>
-							<button> {this.props.cardsData.card_type} </button>         				
+							<p> {this.props.selectedCard.card_type} </p>         				
 						</li> 
 					))}
 				</ul>
 			</div>
 		);
+
 	}
 
 
