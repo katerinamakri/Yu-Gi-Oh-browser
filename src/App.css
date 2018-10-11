@@ -51,7 +51,7 @@
   /*border-radius: 3px;*/
   padding: 0;
   text-align: right;
-  width: 33.33%;
+  /*width: 33.33%;*/
   height: 100vh;
   overflow: scroll;
   overflow-x: hidden; 
@@ -76,6 +76,7 @@ li > p {
   margin: 0;
 }
 
+
 /*
 *
 * Card.js
@@ -84,6 +85,7 @@ li > p {
 
 .card-container {
   padding: 5px;
+  flex: 1;
 }
 
 .card-container > h2 {
