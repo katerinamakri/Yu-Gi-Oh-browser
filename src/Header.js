@@ -7,7 +7,7 @@ class Header extends Component {
 		// onClick={() => this.toggleListView()}
 		return(
         <div className="App-header">
-          <button  className="hamburger-button"> <i className="fas fa-bars"></i> </button>       
+          <button  className="hamburger-button"></button>       
           <h1 className="App-title">Yu-Gi-Oh Deck Browser</h1>
         </div>			
 		);
