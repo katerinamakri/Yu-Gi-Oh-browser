@@ -33,53 +33,80 @@ class App extends Component {
 
     this.state = {
       cards: theDeck,
-      cardsData:[]
+      selectedCard: [],
+      query:'',
+      ListViewOpen:false
     }
-
-    this.fetchCardData = this.fetchCardData.bind(this)
-    // this.getData = this.getData.bind(this)
    }
 
   componentDidMount() {
-    this.fetchCardData();    
+    this.fetchCardData();
   }
 
-  fetchCardData (){
-    var query='Infernoid Antra'
+  fetchCardData = (name) => {
 
-    var request = require('request'); 
+    // var query = name;
+    this.setState({
+      query: name,
+    }) 
 
-    //set options
-    var options = {
-      url: 'http://52.57.88.137/api/card_data/' + query,
-      method: 'GET'
-    };
+    if (this.state.query === undefined){
+      return
+    }
 
-    request(options, function (error, response, body) {
+    console.log(this.state.query)
+
+    fetch(`http://52.57.88.137/api/card_data/${this.state.query}`, { 
+      method: 'GET', 
+      headers: {
+        "Content-Type": "application/json"
+      } 
+    })
+    .then((response) => {
+        return response.json();
+    })
+    .then((results) => {
+      console.log("fetched data", results);
       
-      response.body = JSON.parse(body);
-      // console.log('Response:', body['data']);
+      if (results.status === 'not found'){
+        this.setState({
+          selectedCard: [],
+        })  
+        return
+      }
 
+      if (results.response === undefined){
+        console.log ('No data')
+      } 
       this.setState({
-        cardsData: response.body.data
-      }) 
-      
+        selectedCard: results.data,
+      })  
 
-      console.log(this.state.cardsData);
-    
-    }.bind(this));
+      console.log(this.state.selectedCard)
+
+    })
+    .catch((error) => {
+        // Code for handling errors
+        console.log(error)
+        alert("Sorry. There was an error retrieving the data. Please refer to the console for more information")
+    });
   }
 
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header/>
 
         <div className="container">
           <ListView 
             cards={this.state.cards}
+            selectedCard={this.state.selectedCard}
+            fetchCardData={this.fetchCardData}
           />
-          <Card />
+          <Card
+            query={this.state.query}
+            selectedCard={this.state.selectedCard}
+          />
         </div>
       </div>
     );
