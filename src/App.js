@@ -6,7 +6,7 @@ import Card from './Card.js';
 
 const theDeck = [
   {id:'0', cardName:'Burial from a Different Dimension'},
-  {id:'1', cardName:'Charge of the Light Brigades'},
+  {id:'1', cardName:'Charge of the Light Brigade'},
   {id:'2', cardName:'Infernoid Antra'},
   {id:'3', cardName:'Infernoid Attondel'},
   {id:'4', cardName:'Infernoid Decatron'},
@@ -28,7 +28,7 @@ const theDeck = [
 ];
 
 class App extends Component {
-   constructor(props){
+  constructor(props){
     super(props)
 
     this.state = {
@@ -37,7 +37,7 @@ class App extends Component {
       query:'',
       ListViewOpen:false
     }
-   }
+  }
 
   componentDidMount() {
     this.fetchCardData();
@@ -45,28 +45,24 @@ class App extends Component {
 
   fetchCardData = (name) => {
 
-    // var query = name;
-    this.setState({
-      query: name,
-    }) 
+    this.setState({query: name})
 
-    if (this.state.query === undefined){
-      return
-    }
+    let apiUrl = 'http://52.57.88.137/api/card_data/'+ name
 
-    console.log(this.state.query)
-
-    fetch(`http://52.57.88.137/api/card_data/${this.state.query}`, { 
+    fetch(apiUrl, { 
       method: 'GET', 
       headers: {
         "Content-Type": "application/json"
       } 
     })
     .then((response) => {
-        return response.json();
+
+      if (response.status === 404){
+        console.log ('No data')
+      } 
+      return response.json();
     })
     .then((results) => {
-      console.log("fetched data", results);
       
       if (results.status === 'not found'){
         this.setState({
@@ -74,16 +70,10 @@ class App extends Component {
         })  
         return
       }
-
-      if (results.response === undefined){
-        console.log ('No data')
-      } 
+       
       this.setState({
-        selectedCard: results.data,
+        selectedCard: results.data
       })  
-
-      console.log(this.state.selectedCard)
-
     })
     .catch((error) => {
         // Code for handling errors
