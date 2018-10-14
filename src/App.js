@@ -34,8 +34,7 @@ class App extends Component {
     this.state = {
       cards: theDeck,
       selectedCard: [],
-      query:'',
-      ListViewOpen:false
+      query:''
     }
   }
 
@@ -45,9 +44,11 @@ class App extends Component {
 
   fetchCardData = (name) => {
 
-    this.setState({query: name})
+    let apiUrl;
 
-    let apiUrl = 'http://52.57.88.137/api/card_data/'+ name
+    this.setState({query: name});
+
+    apiUrl = 'http://52.57.88.137/api/card_data/'+ name;
 
     fetch(apiUrl, { 
       method: 'GET', 
@@ -74,6 +75,7 @@ class App extends Component {
       this.setState({
         selectedCard: results.data
       })  
+
     })
     .catch((error) => {
         // Code for handling errors
@@ -86,7 +88,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-
         <div className="container">
           <ListView 
             cards={this.state.cards}
@@ -95,7 +96,7 @@ class App extends Component {
           />
           <Card
             query={this.state.query}
-            selectedCard={this.state.selectedCard}
+            selectedCard={this.state.selectedCard}         
           />
         </div>
       </div>
