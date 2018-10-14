@@ -4,7 +4,6 @@ import './App.css';
 class Header extends Component {
 	render(){
 
-		// onClick={() => this.toggleListView()}
 		return(
         <div className="App-header">
           <button  className="hamburger-button"></button>       
