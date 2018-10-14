@@ -80,12 +80,23 @@ li > p {
 */
 
 .card-container {
-  padding: 5px;
+  padding: 15px;
   flex: 1;
 }
 
-.card-container > h2 {
+.card-header {
+  display: flex;
+}
+
+.card-header > h2 {
   margin: 10px;
+  flex: 1
+}
+
+.card-header > p {
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 3px 6px 3px 6px;
 }
 
 .card-box {
