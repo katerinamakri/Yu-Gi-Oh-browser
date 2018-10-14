@@ -60,6 +60,7 @@
 
 .list {
   padding-left: 0px;
+  margin: 0;
   list-style: none;
   color:white;
 }
@@ -71,6 +72,7 @@ li {
   color: #1c262f;
   border-bottom: 1px solid black;
 }
+
 
 li > p {
   margin: 0;
@@ -99,6 +101,10 @@ li > p {
 
 .img-container {
   padding: 20px;
+}
+
+.card-img {
+  width: 250px;
 }
 
 .card-info > h2 {
