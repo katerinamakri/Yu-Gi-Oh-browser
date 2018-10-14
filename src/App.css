@@ -16,7 +16,6 @@
 
 .App-header {
   background-color: #1c262f;
-/*  height: 150px;*/
   padding: 3px;
   color: white;
   display: flex;
@@ -36,7 +35,6 @@
   border: 0 solid;
   border-radius: 3px;
   font-size: 1.5em;
-  /*visibility: hidden;*/
 }
 
 /*
@@ -46,15 +44,11 @@
 */
 
 .list-container {
-  /*background: #25313c;*/
   border-right: 1px solid #999;
-  /*border-radius: 3px;*/
   padding: 0;
   text-align: right;
-  /*width: 33.33%;*/
   height: 100vh;
-  overflow: scroll;
-  overflow-x: hidden; 
+  overflow: auto; 
 }
 
 
