@@ -9,6 +9,9 @@ To get started developing right away:
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
+### Note
+To run the test watcher in an interactive mode run `npm test`
+
 ## About
 
 The application was created with a create-reaction application.  The parent component (App.js) consists of two children components, ListView and Card.
