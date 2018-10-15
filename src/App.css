@@ -84,6 +84,16 @@ li > p {
   flex: 1;
 }
 
+.paragraph-container > p {
+  font-size: 2em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #828282;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+}
+
 .card-header {
   display: flex;
 }
