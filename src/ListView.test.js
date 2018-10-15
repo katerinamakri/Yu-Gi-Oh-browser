@@ -5,11 +5,11 @@ import App from './App.js';
 import ListView from './ListView.js';
 
 describe('ListView', () => {
- 
+
 	it('should be defined', () => {
 		expect(ListView).toBeDefined();
 	});
- 
+
 	it('should have props', () => {
 		const theDeck = [{'id': 0,'cardName':'Burial from a Different Dimension'},{'id': 1,'cardName':'Charge of the Light Brigade'}]
 		let fetchCardData = jest.fn();
@@ -20,12 +20,11 @@ describe('ListView', () => {
 });
 
 describe('Check onClick event',() => {
-   
-   it('clicking list item',() => {
+
+	it('clicking list item',() => {
 		var mockFunction = jest.fn();
 		var component = shallow(<App fetchCardData={mockFunction} />);
 		component.find(ListView).simulate('click');
 		expect(mockFunction).toHaveBeenCalled();
-
-   })
+	})
 })

@@ -16,10 +16,7 @@ class ListView extends Component {
 				</ul>
 			</div>
 		);
-
 	}
-
-
 }
 
 export default ListView;
