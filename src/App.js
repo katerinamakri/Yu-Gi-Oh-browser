@@ -38,10 +38,6 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    this.fetchCardData();
-  }
-
   fetchCardData = (name) => {
 
     let apiUrl;
