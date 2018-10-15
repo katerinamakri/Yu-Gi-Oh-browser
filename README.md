@@ -15,11 +15,11 @@ To run the test watcher in an interactive mode run `npm test`
 
 ## About
 
-The application was created with a create-reaction application.  The parent component (App.js) consists of two children components, ListView and Card.
+The application was created with a create-react-app application. The parent component (App.js) consists of two children components, ListView and Card.
 The Parent component contains the cards list, the state which is updated by ListView component and the function that retrieves the data. ListView takes as props the list from Parent component and displays it in the UI. It also calls the fetchCardData function from Parent component to retrieve selectedCard data. Card component takes as props the selectedCard from App and displays the card information in UI.
 
 ## Future Improvements
-- [ ] Units tests
+- [ ] Unit-test
 
 ## Dependencies
 * [Create React App](https://github.com/facebook/create-react-app)
