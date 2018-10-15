@@ -6,6 +6,7 @@ This is a simple web application created with React.js. On the left side of brow
 
 To get started developing right away:
 
+* clone the repo in your desktop with `git clone https://github.com/katerinamakri/Yu-Gi-Oh-browser.git`
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
