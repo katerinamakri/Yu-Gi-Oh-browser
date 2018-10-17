@@ -34,7 +34,8 @@ class App extends Component {
     this.state = {
       cards: theDeck,
       selectedCard: [],
-      query:''
+      query:'',
+      isListViewOpen: true
     }
   }
 
@@ -80,15 +81,25 @@ class App extends Component {
     });
   }
 
+  //handle hamburger icon
+  toggleListView = () => {
+    if (this.state.isListViewOpen) {
+      this.setState({isListViewOpen: false})
+    } else {
+      this.setState({isListViewOpen: true})
+    }   
+  }
+
   render() {
     return (
       <div className="App">
-        <Header/>
+        <Header toggleListView={this.toggleListView} isListViewOpen={this.state.isListViewOpen}/>
         <div className="container">
           <ListView 
             cards={this.state.cards}
             selectedCard={this.state.selectedCard}
             fetchCardData={this.fetchCardData}
+            isListViewOpen={this.state.isListViewOpen}
           />
           <Card
             query={this.state.query}
