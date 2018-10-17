@@ -13,7 +13,6 @@
 *
 */
 
-
 .App-header {
   background-color: #1c262f;
   padding: 3px;
@@ -27,7 +26,7 @@
   width: 100%;
 }
 
-.hamburger-button{
+.hamburger-button {
   background-color: #1c262f;
   color: white;
   width: 40px;
@@ -35,6 +34,10 @@
   border: 0 solid;
   border-radius: 3px;
   font-size: 1.5em;
+}
+
+.hamburger-button:hover {
+  background-color: #2e3d49;
 }
 
 /*
@@ -125,4 +128,14 @@ li > p {
 .card-info > h2 {
   margin: 10px 0;
 }
+
+/*
+*
+*
+*RESPONSIVE
+*
+*
+*/
+
+
 
