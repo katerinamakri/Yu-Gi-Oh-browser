@@ -1,6 +1,8 @@
 # Simple Yu-Gi-Oh Deck Browser
 This is a simple web application created with React.js. On the left side of browser, the user can select a card and the card information will appear on the right side.
 
+[Live Demo](https://katerinamakri.github.io/Yu-Gi-Oh-browser/)
+
 
 ## How to get started
 
